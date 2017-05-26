@@ -50,13 +50,13 @@
 	<value>%TARGETARCHITECTURE%</value>
       <paramgroup name='x86' description='Target is running on an x86 processor'>
         <parameter type='LocalFile' name='MigrateProcessDLL' description=' The DLL that will be used to inject into a remote process'>
-          <default>/usr/share/estemaudit/files/rudo_x86.dll</default>
+          <default>/usr/share/estemaudit/rudo_x86.dll</default>
             </parameter>
         <parameter type='LocalFile' name='CallbackPayloadDLL' description='The DLL that will be used as a callback payload'>
           <default>/root/.wine/drive_c/shell.dll</default>  
         </parameter>
         <parameter type='LocalFile' name='ListenPayloadDLL' description='The DLL that will be used as a listen payload'>
-          <default>/usr/share/estemaudit/files/lipa_x86.dll</default>
+          <default>/usr/share/estemaudit/lipa_x86.dll</default>
         </parameter>
         <paramchoice name='Target' description='OS and Service pack of the target'>
 	  <value>%TARGET%</value>
@@ -684,13 +684,13 @@
       </paramgroup>
       <paramgroup name='x86 64-bit' description='Target is running on an x86 64-bit processor'>
         <parameter type='LocalFile' name='MigrateProcessDLL' description=' The DLL that will be used to inject into a remote process'>
-          <default>/usr/share/estemaudit/files/rudo_x86.dll</default>
+          <default>/usr/share/estemaudit/rudo_x86.dll</default>
         </parameter>
         <parameter type='LocalFile' name='CallbackPayloadDLL' description='The DLL that will be used as a callback payload'>
           <default>/root/.wine/drive_c/shell.dll</default>
         </parameter>
         <parameter type='LocalFile' name='ListenPayloadDLL' description='The DLL that will be used as a listen payload'>
-          <default>/usr/share/estemaudit/files/lipa_x86.dll</default>
+          <default>/usr/share/estemaudit/lipa_x86.dll</default>
         </parameter>
         <paramchoice name='Target' description='Suspected OS and language pack'>
           <default>Other|64</default>
