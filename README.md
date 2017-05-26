@@ -8,6 +8,7 @@ How to do:
 - Copy the esteemaudit.rb on the right Metasploit folder
 - Copy only the content of "files" folder on /usr/share/esteemaudit/
 
- 
+www.blackmath.it
+info@blackmath.it
 
 
