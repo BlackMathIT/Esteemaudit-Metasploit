@@ -1,7 +1,9 @@
 # Esteemaudit-Metasploit
 
 This is a porting of the infamous Esteemaudit RDP Exploit leaked from Equationgroup (NSA).
-Vulnerable machines are Windows Server 2003 SP1,SP2.
+The vulnerability exploited by this attack is related to Smart Card authentication, used when 
+logging onto the system via the RDP service. Systems affected are Windows Server 2003 SP1,SP2 
+and Windows XP SP0, SP1, SP3.
 
 Dependencies:
 
