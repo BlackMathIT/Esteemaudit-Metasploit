@@ -1,7 +1,7 @@
 # Esteemaudit-Metasploit
 
 This is a porting of the infamous Esteemaudit RDP Exploit leaked from Equationgroup (NSA).
-Vulnerable machines are Windows Server 2003 SP1,SP2 and Windows XP, SP1,SP2, SP3.
+Vulnerable machines are Windows Server 2003 SP1,SP2.
 
 Dependencies:
 
