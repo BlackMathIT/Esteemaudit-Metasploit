@@ -23,15 +23,9 @@ class MetasploitModule < Msf::Exploit::Remote
           'BadChars'   => "\x00\x0a\x0d",
         },
       'Platform'       => 'win',
-      'DefaultTarget'  => 8,
+      'DefaultTarget'  => 3,
       'Targets'        =>
         [
-	  ['XPSP0         Windows XP SP0',{}],
-	  ['XPSP1         Windows XP SP1',{}],
-	  ['XPSP0|1       Windows XP SP0 or SP1',{}],
-	  ['XPSP2         Windows XP SP2',{}],
-          ['XPSP3         Windows XP SP3',{}],
-	  ['XPSP2|3       Windows XP SP2 or SP3',{}],
 	  ['W2K3SP0       Windows 2003 SP0',{}],
 	  ['W2K3SP1       Windows 2003 SP1',{}],
 	  ['W2K3SP2       Windows 2003 SP2',{}],
