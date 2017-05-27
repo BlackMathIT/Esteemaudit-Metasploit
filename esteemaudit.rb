@@ -9,7 +9,7 @@ class MetasploitModule < Msf::Exploit::Remote
       'Name'        => 'Esteemaudit',
       'Description' => %q{
           This is a porting of the infamous Esteemaudit RDP Exploit leaked from Equationgroup (NSA).
-	  Vulnerable machines are Windows Server 2003 SP1,SP2 and Windows XP SP0, SP1, SP3. 
+	  Vulnerable machines are Windows Server 2003 SP1,SP2. 
       },
       'Author'      =>
         [
