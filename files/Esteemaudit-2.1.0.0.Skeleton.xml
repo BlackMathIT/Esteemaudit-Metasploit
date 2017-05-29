@@ -684,13 +684,13 @@
       </paramgroup>
       <paramgroup name='x86 64-bit' description='Target is running on an x86 64-bit processor'>
         <parameter type='LocalFile' name='MigrateProcessDLL' description=' The DLL that will be used to inject into a remote process'>
-          <default>%ESTEEMAUDITPATH%rudo_x86.dll</default>
+          <default>%ESTEEMAUDITPATH%rudo_x64.dll</default>
         </parameter>
         <parameter type='LocalFile' name='CallbackPayloadDLL' description='The DLL that will be used as a callback payload'>
           <default>%WINEPATH%shell.dll</default>
         </parameter>
         <parameter type='LocalFile' name='ListenPayloadDLL' description='The DLL that will be used as a listen payload'>
-          <default>%ESTEEMAUDITPATH%lipa_x86.dll</default>
+          <default>%ESTEEMAUDITPATH%lipa_x64.dll</default>
         </parameter>
         <paramchoice name='Target' description='Suspected OS and language pack'>
           <default>Other|64</default>
