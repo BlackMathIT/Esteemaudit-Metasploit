@@ -18,6 +18,16 @@ How to do:
 - wine /usr/share/esteemaudit/Esteemaudit-2.1.0.exe 2>0   
 (This is just to create Wine32 environment, skip it if you already have /root/.wine/drive_c/)
 
+How to mitigate
+---------------
+
+Windows server 2003: 
+* Run gpedit.msc
+* Go to Computer Configuration\Administrative Templates\Windows Components\Terminal Services\Client/Server data redirection\
+* Set enable on "Do not allow Smart Card device redirection" 
+* Restart the server.
+
+![alt text](http://www.blackmath.it/img/wk3gpo.png)
 
 www.blackmath.it | info@blackmath.it
 
