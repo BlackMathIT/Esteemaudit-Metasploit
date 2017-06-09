@@ -21,7 +21,7 @@ How to do:
 How to mitigate
 ---------------
 
-Windows server 2003: 
+Windows server 2003 and XP: 
 * Run gpedit.msc
 * Go to Computer Configuration\Administrative Templates\Windows Components\Terminal Services\Client/Server data redirection\
 * Set enable on "Do not allow Smart Card device redirection" 
