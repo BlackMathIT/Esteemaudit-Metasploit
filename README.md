@@ -18,6 +18,9 @@ How to do:
 - wine /usr/share/esteemaudit/Esteemaudit-2.1.0.exe 2>0   
 (This is just to create Wine32 environment, skip it if you already have /root/.wine/drive_c/)
 
+WE ARE NOT RESPONSIBLE OF ANY DAMAGES CAUSED BY THE USE OF THIS PORTING. IT WAS MADE FOR EDUCATIONAL PURPOSE AND TESTING ONLY!
+---------------
+
 How to mitigate
 ---------------
 
