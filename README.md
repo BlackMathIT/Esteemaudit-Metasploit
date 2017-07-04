@@ -21,8 +21,12 @@ How to do:
 WE ARE NOT RESPONSIBLE OF ANY DAMAGES CAUSED BY THE USE OF THIS PORTING. IT WAS MADE FOR EDUCATIONAL PURPOSE AND TESTING ONLY!
 ---------------
 
-How to mitigate
+Microsoft released a Patch
 ---------------
+https://support.microsoft.com/en-us/help/4025687/microsoft-security-advisory-4025685-guidance-for-older-platforms
+
+How to mitigate via GPO
+-------------------------------------------
 
 Windows server 2003 and XP: 
 * Run gpedit.msc
